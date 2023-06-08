@@ -27,7 +27,6 @@ set incsearch "边输入边搜索(实时搜索)"
 "4. 全模式下的按键映射
 "================="
 map <A> <C> "Alt -> Ctrl"
-"需要xmodmap"
 au VimEnter * silent! !xmodmap -e 'clear Lock' -e 'keycode 0x42 = Escape'
 au VimLeave * silent! !xmodmap -e 'clear Lock' -e 'keycode 0x42 = Caps_Lock'
 
@@ -42,5 +41,8 @@ nnoremap <F3> :set invhlsearch<CR> "切换高亮显示"
 inoremap ( ()<Esc>i
 inoremap [ []<Esc>i
 inoremap { {}<Esc>i
-inoremap < <><Esc>i
+inoremap " ""<Esc>i
 inoremap ; <Esc>A;
+inoremap ) <Esc>la
+inoremap ] <Esc>la
+inoremap } <Esc>la
