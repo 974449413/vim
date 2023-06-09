@@ -18,7 +18,7 @@ set softtabstop=4 "制表符转换为4个空格"
 set shiftwidth=4 "自动缩进时插入的空格"
 
 "================="
-"3. 当前文件内搜索选项"
+"3. 文件内搜索选项"
 "================="
 set hlsearch "开启搜索结果的高亮显示"
 set incsearch "边输入边搜索(实时搜索)"
@@ -38,11 +38,11 @@ nnoremap <F3> :set invhlsearch<CR> "切换高亮显示"
 "================="
 "6. 插入模式下的按键映射
 "================="
-inoremap ( ()<Esc>i
-inoremap [ []<Esc>i
-inoremap { {}<Esc>i
-inoremap " ""<Esc>i
-inoremap ; <Esc>A;
-inoremap ) <Esc>la
-inoremap ] <Esc>la
-inoremap } <Esc>la
+"inoremap ( ()<Esc>i
+"inoremap [ []<Esc>i
+"inoremap { {}<Esc>i
+"inoremap " ""<Esc>i
+"inoremap ; <Esc>A;
+"inoremap ) <Esc>la
+"inoremap ] <Esc>la
+"inoremap } <Esc>la
