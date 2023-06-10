@@ -27,8 +27,12 @@ set incsearch "边输入边搜索(实时搜索)"
 "4. 全模式下的按键映射
 "================="
 map <A> <C> "Alt -> Ctrl"
-au VimEnter * silent! !xmodmap -e 'clear Lock' -e 'keycode 0x42 = Escape'
+au VimEnter * silent! !xmodmap -e 'clear Lock' -e 'keycode 0x42 = Control_L'
 au VimLeave * silent! !xmodmap -e 'clear Lock' -e 'keycode 0x42 = Caps_Lock'
+
+"xmodmap -e "clear lock""
+"xmodmap -e "keycode 66 = Control_L""
+"xmodmap -e "add control = Control_L""
 
 "================="
 "5. 普通模式下的按键映射
