@@ -26,7 +26,9 @@ set incsearch "边输入边搜索(实时搜索)"
 "================="
 "4. 全模式下的按键映射
 "================="
-xmodmap -e "remove Lock = Caps_Lock" -e "add Control = Caps_Lock"
+"au VimEnter * silent! !xmodmap -e clear Lock -e keycode 0x42 = Escape
+au VimEnter * silent! !xmodmap -e "remove Lock = Caps_Lock" -e "add Control = Caps_Lock"
+au VimLeave * silent! !xmodmap -e clear Lock -e keycode 0x42 = Caps_Lock
 "================="
 "5. 普通模式下的按键映射
 "================="
