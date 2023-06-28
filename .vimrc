@@ -1,13 +1,13 @@
 "$HOME/.vimrc"
 
 "======================"
- "1.设置文件编码，解决中文乱码问题"
- "======================"
- if has("multi_byte")
-    set fileencodings=utf-8,ucs-bom,cp936,cp1250,big5,euc-jp,euc-kr,latin1
- else
-    echoerr "Sorry, this version of (g)vim was not compiled with multi_byte"
- endif
+"1.设置文件编码，解决中文乱码问题"
+"======================"
+if has("multi_byte")
+   set fileencodings=utf-8,ucs-bom,cp936,cp1250,big5,euc-jp,euc-kr,latin1
+else
+   echoerr "Sorry, this version of (g)vim was not compiled with multi_byte"
+endif
 
 "============="
 "2. 设置缩进"
@@ -26,9 +26,7 @@ set incsearch "边输入边搜索(实时搜索)"
 "================="
 "4. 全模式下的按键映射
 "================="
-"au VimEnter * silent! !xmodmap -e clear Lock -e keycode 0x42 = Escape
-au VimEnter * silent! !xmodmap -e "remove Lock = Caps_Lock" -e "add Control = Caps_Lock"
-au VimLeave * silent! !xmodmap -e clear Lock -e keycode 0x42 = Caps_Lock
+
 "================="
 "5. 普通模式下的按键映射
 "================="
@@ -37,11 +35,13 @@ nnoremap <F3> :set invhlsearch<CR> "切换高亮显示"
 "================="
 "6. 插入模式下的按键映射
 "================="
-"inoremap ( ()<Esc>i
-"inoremap [ []<Esc>i
-"inoremap { {}<Esc>i
-"inoremap " ""<Esc>i
-"inoremap ; <Esc>A;
-"inoremap ) <Esc>la
-"inoremap ] <Esc>la
-"inoremap } <Esc>la
+
+"================="
+"7. 开启文件的语法高亮
+"================="
+syntax on
+autocmd BufRead,BufNewFile *.c set syntax=c
+autocmd BufRead,BufNewFile *.h set syntax=c
+autocmd BufRead,BufNewFile *.cpp set syntax=cpp
+autocmd BufRead,BufNewFile *.hpp set syntax=cpp
+autocmd BufRead,BufNewFile *.lua set syntax=lua
